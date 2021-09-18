@@ -13,4 +13,7 @@ LDFLAGS += ${LIBBSD_LIBS}
 PROG=	gencat
 MAN=	gencat.1
 
+# don't try to setup ownership; allow unprivileged installation for staging
+BINOWN=
+MANOWN=
 .include <bsd.prog.mk>

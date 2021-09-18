@@ -1,0 +1,4 @@
+*.[od]
+*.cat?
+gencat
+.depend

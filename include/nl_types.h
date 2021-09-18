@@ -29,6 +29,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include_next <nl_types.h>
 #ifndef _NL_TYPES_H_
 #define _NL_TYPES_H_
 #include <sys/cdefs.h>
@@ -73,28 +74,5 @@ struct _nls_msg_hdr {
 
 #define	NL_SETD		1
 #define NL_CAT_LOCALE   1
-
-typedef struct __nl_cat_d {
-	void	*__data;
-	int	__size;
-} *nl_catd;
-
-typedef long	nl_item;
-
-__BEGIN_DECLS
-nl_catd  catopen(const char *, int);
-char    *catgets(nl_catd, int, int, const char *) __format_arg(4);
-int	 catclose(nl_catd);
-__END_DECLS
-
-#if defined(_NETBSD_SOURCE)
-#  ifndef __LOCALE_T_DECLARED
-typedef struct _locale		*locale_t;
-#  define __LOCALE_T_DECLARED
-#  endif
-__BEGIN_DECLS
-nl_catd  catopen_l(const char *, int, locale_t);
-__END_DECLS
-#endif
 
 #endif	/* _NL_TYPES_H_ */

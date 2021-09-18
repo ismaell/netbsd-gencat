@@ -1,0 +1,4 @@
+This is the gencat implementation extracted from NetBSD, to be used on other
+systems. It can be built using bmake.
+
+The source code of the utility itself is unmodified, to make it easy to sync.
